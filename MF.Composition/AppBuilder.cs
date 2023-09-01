@@ -20,7 +20,7 @@ namespace MF.Composition
             services.AddMemoryCache();
 
             services.Configure<FragmentsConfig>(builder.Configuration.GetSection("Router"));
-            services.AddTransient<RoutingMiddleware>();
+            //services.AddTransient<RoutingMiddleware>();
 
 
             services.Configure<FragmentsConfig>(builder.Configuration.GetSection("Fragments"));

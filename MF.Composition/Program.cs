@@ -19,13 +19,13 @@ app.UseStaticFiles();
 
 app.UseMiddleware<RoutingMiddleware>();
 
+
 app.UseRouting();
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints => {
-    endpoints.MapRazorPages();
-    endpoints.MapDynamicPageRoute<DynamicRouteTransformer>("/{**slug}");
-});
+app.MapDynamicPageRoute<DynamicRouteTransformer>("/{**slug}");
+
+app.MapRazorPages();
 
 app.Run();

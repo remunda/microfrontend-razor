@@ -7,10 +7,12 @@ namespace MF.Composition.Routing
     {
         public override async ValueTask<RouteValueDictionary> TransformAsync(HttpContext httpContext, RouteValueDictionary values)
         {
+            values ??= new RouteValueDictionary();
+
             var routingContext = httpContext.Features.Get<RoutingContext>();
             if (routingContext?.LayoutName == "home")
             {
-                values["page"] = "/Home/Index";
+                values["page"] = "/Index";
             }
 
             return values;

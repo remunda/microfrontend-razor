@@ -16,12 +16,7 @@
 
             var content = await result.Content.ReadAsStringAsync();
 
-            return new FragmentResult
-            {
-                Name = fragmentRequest.Name,
-                StatusCode = result.StatusCode,
-                Content = content
-            };
+            return new FragmentResult(fragmentRequest.Name, content, result.StatusCode, fragmentRequest);
         }
 
     }
