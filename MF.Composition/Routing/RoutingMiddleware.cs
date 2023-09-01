@@ -20,6 +20,10 @@ namespace MF.Composition.Routing
             {
                 routingContext.LayoutName = "home";
             }
+            else if (context.Request.Path.StartsWithSegments("/api/myapi"))
+            {
+                routingContext.ForwardTo = "myapi";
+            }
 
             context.Features.Set(routingContext);
 
