@@ -2,7 +2,7 @@
 {
     public class FragmentRequest
     {
-        public FragmentRequest(string name, Uri url)
+        public FragmentRequest(string name, Uri url, HttpMethod? method = null)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -11,12 +11,13 @@
 
             Name = name;
             Url = url ?? throw new ArgumentNullException(nameof(url));
+            Method = method ?? HttpMethod.Get;
         }
 
-        public Uri Url { get; set; }
-        public string Name { get; set; }
+        public Uri Url { get; private set; }
+        public HttpMethod Method { get; private set; }
+        public string Name { get; private set; }
         public bool IsMainFragment { get; set; }
         public bool EnableCache { get; set; }
-        public HttpMethod Method { get; internal set; }
     }
 }

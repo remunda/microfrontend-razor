@@ -10,18 +10,15 @@ namespace MF.Composition.Model
 {
     public abstract class LayoutBasePageModel : PageModel
     {
-        private readonly IFragmentClient fragmentClient;
         private readonly IFragmentProcessor fragmentProcessor;
         private readonly IOptions<FragmentsConfig> fragmentOptions;
 
         public IDictionary<string, FragmentResult> Fragments { get; } = new Dictionary<string, FragmentResult>();
 
         public LayoutBasePageModel(
-            IFragmentClient fragmentClient,
             IFragmentProcessor fragmentProcessor,
             IOptions<FragmentsConfig> fragmentOptions)
         {
-            this.fragmentClient = fragmentClient ?? throw new ArgumentNullException(nameof(fragmentClient));
             this.fragmentProcessor = fragmentProcessor ?? throw new ArgumentNullException(nameof(fragmentProcessor));
             this.fragmentOptions = fragmentOptions ?? throw new ArgumentNullException(nameof(fragmentOptions));
         }

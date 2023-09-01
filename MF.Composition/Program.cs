@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.AddMFRouting();
 builder.AddFragments();
 
 var app = builder.Build();
