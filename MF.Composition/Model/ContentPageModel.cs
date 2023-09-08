@@ -5,12 +5,12 @@ using Microsoft.Extensions.Options;
 
 namespace MF.Composition.Model
 {
-    public class HomePageModel : LayoutBasePageModel
+    public class ContentPageModel : LayoutBasePageModel
     {
         private readonly IFragmentProcessor fragmentProcessor;
         private readonly IOptions<FragmentsConfig> fragmentOptions;
 
-        public HomePageModel(
+        public ContentPageModel(
             IFragmentProcessor fragmentProcessor,
             IOptions<FragmentsConfig> fragmentOptions)
             : base(fragmentProcessor, fragmentOptions)
@@ -21,7 +21,7 @@ namespace MF.Composition.Model
 
         public override async Task<FragmentResult[]> LoadFragments(HttpContext httpContext, CancellationToken cancellationToken)
         {
-            var result = await fragmentProcessor.Get(new FragmentRequest("home", fragmentOptions.Value.HomeUrl!), cancellationToken);
+            var result = await fragmentProcessor.Get(new FragmentRequest("content", fragmentOptions.Value.ContentUrl!), cancellationToken);
             return new[] { result };
         }
     }

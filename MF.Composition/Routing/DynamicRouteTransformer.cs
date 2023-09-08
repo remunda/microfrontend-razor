@@ -14,6 +14,10 @@ namespace MF.Composition.Routing
             {
                 values["page"] = "/Index";
             }
+            else if (routingContext?.LayoutName == "content")
+            {
+                values["page"] = "/Content";
+            }
 
             return values;
         }
