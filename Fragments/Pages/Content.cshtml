@@ -9,5 +9,9 @@
         <li><strong>Establish Team Prefixes</strong><br>Agree on naming conventions where isolation is not possible yet. Namespace CSS, Events, Local Storage and Cookies to avoid collisions and clarify ownership.</li>
         <li><strong>Favor Native Browser Features over Custom APIs</strong><br>Use <a href="#parent-child-communication--dom-modification">Browser Events for communication</a> instead of building a global PubSub system. If you really have to build a cross-team API, try keeping it as simple as possible.</li>
         <li><strong>Build a Resilient Site</strong><br>Your feature should be useful, even if JavaScript failed or hasn’t executed yet. Use <a href="#server-side-rendering--universal-rendering">Universal Rendering</a> and Progressive Enhancement to improve perceived performance.</li>
+        @for (int i = 0; i < 5; i++)
+        {
+            <li><strong>Some</strong><br>other text</li>
+        }
     </ul>
 </p>
