@@ -18,10 +18,15 @@ namespace MF.Composition.Routing
 
             if (context.Request.Path == "/")
             {
-                routingContext.LayoutName = "home";
+                routingContext.LayoutName = "Home";
+            }
+            else if (context.Request.Path == "/content")
+            {
+                routingContext.LayoutName = "Content";
             }
             else if (context.Request.Path.StartsWithSegments("/api/myapi"))
             {
+                // TBD: forward calls to APIs
                 routingContext.ForwardTo = "myapi";
             }
 

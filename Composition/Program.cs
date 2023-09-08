@@ -17,6 +17,8 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
+
+// decide which layout to render based on HTTP Request URL
 app.UseMiddleware<RoutingMiddleware>();
 
 

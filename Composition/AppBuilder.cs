@@ -13,13 +13,11 @@ namespace MF.Composition
         {
             var services = builder.Services;
 
-            services.AddHttpContextAccessor();
             services.AddHealthChecks();
             services.AddResponseCompression();
             services.AddHttpClient();
             services.AddMemoryCache();
 
-            services.Configure<FragmentsConfig>(builder.Configuration.GetSection("Router"));
             services.Configure<FragmentsConfig>(builder.Configuration.GetSection("Fragments"));
 
             services.AddTransient<IFragmentProcessor, FragmentProcessor>();
